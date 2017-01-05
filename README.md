@@ -9,7 +9,7 @@ API Testing script using TestNG testing framework.
 ##Tools & Libraries
 The test automation framework is comprised of following tools and libraries: <br />
 JAVA   : Programming language  
-TestNg : TestNg Java testing framework  
+TestNg : TestNg Java testing framework (library included in maven's pom)
 Maven  : Build tool <br />
 Github : Git repository hosted server  
 Eclipse: Integrated Development Environment 
@@ -22,7 +22,7 @@ java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=conf
 ```
 To see a TestNG report open `/test-output/index.html` in your browser.
 
-##Configurating files
+##Configuring files
 
 ###TestNG '.xml' file
 `/suites/file_name.xml` <br />
@@ -57,9 +57,10 @@ Write you TestNG test cases in the file .java with the @Test annotation.
 ```bash
 @Test(groups = {"group_name"})
   public void testFunction() throws Exception {
-  /*
-  *Test Code here
-  */
+  /* Example of a Test Case:
+   * TestUtils.exAndValidateAPICall(testdf.getTestData(id));
+   * where id = id of the corresponding test case in postgres table
+   */
   }
 ```
 
