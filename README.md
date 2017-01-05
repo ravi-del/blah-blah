@@ -14,13 +14,13 @@ Eclipse: Integrated Development Environment
 ## Implementation
 To execute test cases and generate a TestNG report you should perform following steps:
 
-1. Clone the git hub repository to local.
+1. Clone the git hub repository to local.<br />
 `git clone https://github.com/delhivery/api-autommation.git`
 
-2. Use maven package command to create a fat jar.
+2. Use maven package command to create a fat jar.<br />
 `mvn package`
 
-3. Make you shell script executable using chmod and then execute it.<br />
+3. Make you shell script executable using chmod and then execute it.<br/>
 ```bash
 chmod +x startup.sh
 ./startup.sh`
