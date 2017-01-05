@@ -23,9 +23,9 @@ To see a TestNG report open `/test-output/index.html` in your browser.
 ##Configuring `startup.sh` file
 `startup.sh` file contains 
 `java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config` where, <br />
-..* `target/ClientTest-0.0.1-SNAPSHOT-fat.jar` is the jar created by maven package,
-..* `file_name.xml` is the TestNG suite file,
-..* `config_name/config_name.config` is the configuration file.
+⋅⋅* `target/ClientTest-0.0.1-SNAPSHOT-fat.jar` is the jar created by maven package,
+⋅⋅* `file_name.xml` is the TestNG suite file,
+⋅⋅* `config_name/config_name.config` is the configuration file.
 ###TestNG '.xml' file
 `/suites/file_name.xml` <br />
 Configure the xml file (eg: file_name.xml) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
