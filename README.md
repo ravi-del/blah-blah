@@ -4,7 +4,7 @@ API Testing script using TestNG testing framework.
 
 ## Tools & Libraries
 The test automation framework is comprised of following tools and libraries: <br />
-JAVA   : Programming language  
+JAVA     : Programming language  
 TestNg : TestNg Java testing framework (TestNG library included in maven's pom)
 Maven  : Build tool <br />
 Github : Git repository hosted server  
