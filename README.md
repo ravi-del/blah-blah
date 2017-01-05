@@ -1,5 +1,4 @@
-API-AUTOMATION
-==============
+# API-AUTOMATION
 
 API Testing script using TestNG testing framework.
 
@@ -71,5 +70,4 @@ Write you TestNG test cases in java file with the `@Test` annotation.
    * where id = id of the corresponding test case in postgres table
    */
   }
-```<br/>
-onadoan: ![alt text](https://d.fastcompany.net/multisite_files/fastcompany/inline/2014/08/3034007-inline-i-applelogo.jpg "apple")
+```
