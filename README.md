@@ -1,7 +1,6 @@
 API-AUTOMATION
 ==============
 
-#About<br />
 API Testing script using TestNG testing framework.
 
 #Getting Started
@@ -44,7 +43,7 @@ CREATE TABLE table_name(
   service VARCHAR,
   requestjson VARCHAR,
   reqtype VARCHAR, -- request type
-  qparam VARCHAR, -- query parameter
+  qparam VARCHAR,  -- query parameter
   expectedjson VARCHAR,aaaaaa
   httpcode INTEGER,
   baseurl VARCHAR,
