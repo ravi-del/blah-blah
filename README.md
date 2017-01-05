@@ -72,4 +72,4 @@ Write you TestNG test cases in java file with the `@Test` annotation.
    */
   }
 ```<br/>
-![alt text](https://d.fastcompany.net/multisite_files/fastcompany/inline/2014/08/3034007-inline-i-applelogo.jpg "apple")
+onadoan: ![alt text](https://d.fastcompany.net/multisite_files/fastcompany/inline/2014/08/3034007-inline-i-applelogo.jpg "apple")
