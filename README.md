@@ -26,7 +26,7 @@ To execute test cases and generate a TestNG report you should perform following 
 To see TestNG report open `/test-output/index.html` in your browser.
 
 ### Configuring `startup.sh` file
-`startup.sh` file contains <br />
+THe shell script `startup.sh` file contains <br />
 `java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config`<br/> where,
 * `target/ClientTest-0.0.1-SNAPSHOT-fat.jar` is the jar created by maven package,<br />
 * `file_name.xml` is the TestNG suite file,<br />
