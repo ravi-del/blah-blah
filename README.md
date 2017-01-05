@@ -3,7 +3,8 @@ API-AUTOMATION
 
 API Testing script using TestNG testing framework.
 
-#Getting Started
+Getting Started
+===============
 
 ##Tools & Libraries
 The test automation framework is comprised of following tools and libraries: <br />
