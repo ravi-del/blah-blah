@@ -18,7 +18,7 @@ git clone https://github.com/delhivery/api-autommation.git
 mvn package
 ./startup.sh
 ```
-To see a TestNG report open `/test-output/index.html` in your browser.
+To see TestNG report open `/test-output/index.html` in your browser.
 
 ### Configuring `startup.sh` file
 `startup.sh` file contains <br />
@@ -29,11 +29,11 @@ To see a TestNG report open `/test-output/index.html` in your browser.
 
 ### TestNG '.xml' file
 `/suites/file_name.xml` <br />
-Configure the xml file (eg: file_name.xml) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
+Configure the .xml file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
 
 ### Configuration file 
 `/config/config_name/config_name.config` <br />
-Configure the .config file (eg: config_name/config_name.config) to suit a service. Specify the endpoint and the details of the Data Base being used.
+Configure the .config file (`config_name/config_name.config` in this case) to suit a service. Specify the endpoint of the service and the details of the Postgres Data Base being used in the config file.
 
 ### Initializing the Postgres Database
 Add a table in Postgresql Database with the test data.
@@ -56,7 +56,7 @@ CREATE TABLE table_name(
 ```
 
 ### Test Cases
-Write you TestNG test cases in the file .java with the @Test annotation.
+Write you TestNG test cases in java file with the `@Test` annotation.
 ```bash
 @Test(groups = {"group_name"})
   public void testFunction() throws Exception {
