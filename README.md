@@ -21,8 +21,9 @@ To execute test cases and generate a TestNG report you should perform following 
 `mvn package`
 
 3. Make you shell script executable using chmod and then execute it.<br/>
-`chmod +x startup.sh
-./startup.sh`
+`chmod +x startup.sh`
+`./startup.sh`
+
 To see TestNG report open `/test-output/index.html` in your browser.
 
 ### Configuring `startup.sh` file
