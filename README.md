@@ -53,11 +53,12 @@ CREATE TABLE table_name(
   requestjson VARCHAR,
   reqtype VARCHAR, -- request type
   qparam VARCHAR,  -- query parameter
-  expectedjson VARCHAR,aaaaaa
+  expectedjson VARCHAR,
   httpcode INTEGER,
   baseurl VARCHAR,
     PRIMARY KEY (id)
 );
+CREATE INDEX service_index ON table_name (service);
 ```
 
 ### Test Cases
