@@ -2,23 +2,21 @@ API-AUTOMATION
 ==============
 
 #About<br />
-API Testing script using TestNG.
+API Testing script using TestNG testing framework.
 
 #Getting Started
 
 ##Tools & Libraries
 The test automation framework is comprised of following tools and libraries: <br />
-JAVA: - Programming language  
-TestNg: - TestNg Java testing framework  
-Maven: - Build tool <br />
-Github : - Git repository hosted server  
-Eclipse: - Integrated Development Environment 
+JAVA   : Programming language  
+TestNg : TestNg Java testing framework  
+Maven  : Build tool <br />
+Github : Git repository hosted server  
+Eclipse: Integrated Development Environment 
 
 To generate a TestNG report you should perform following steps:
 ```bash
 git clone https://github.com/delhivery/api-autommation.git
-mvn clean install
-mvn compile
 mvn package
 java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config
 ```
