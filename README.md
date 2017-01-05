@@ -12,7 +12,7 @@ Github : Git repository hosted server
 Eclipse: Integrated Development Environment 
 
 ## Implementation
-To generate a TestNG report you should perform following steps:
+To execute test cases and generate a TestNG report you should perform following steps:
 ```bash
 git clone https://github.com/delhivery/api-autommation.git
 mvn package
