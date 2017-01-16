@@ -25,22 +25,22 @@ To execute test cases and generate a TestNG report you should perform following 
 
 To see TestNG report open `/test-output/index.html` in your browser.
 
-### Configuring `startup.sh` file
-The shell script `startup.sh` file contains <br />
-`java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config`<br/> where,
-* `target/ClientTest-0.0.1-SNAPSHOT-fat.jar` is the jar created by maven package,<br />
-* `file_name.xml` is the TestNG suite file,<br />
-* `config_name/config_name.config` is the configuration file.
+## How to add a Test Case for a New Service
+#### Writing test cases
+Write you TestNG test cases in java file (preferably in package com.delhivery.tests.modules) with the `@Test` annotation.
+```bash
+private TestDataFactory testdf = TestDataFactory.getTestDataFactory();
+@Test(groups = {"group_name"})
+  public void testFunction() throws Exception {
+  /* Example of a Test Case:
+   * TestUtils.exAndValidateAPICall(testdf.getTestData(id));
+   * where id = id of the corresponding test case in postgres table
+   */
+  }
+```
+Add this Main Class into pom.xml file.
 
-### TestNG '.xml' file
-`/suites/file_name.xml` <br />
-Configure the .xml file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
-
-### Configuration file 
-`/config/config_name/config_name.config` <br />
-Configure the .config file (`config_name/config_name.config` in this case) to suit a service. Specify the endpoint of the service and the details of the Postgres Data Base being used in the config file.
-
-### Initializing the Postgres Database
+#### Initializing the Postgres Database
 Add a table in Postgresql Database with the test data.
 ```bash
 sudo -su postgres psql
@@ -61,14 +61,23 @@ CREATE TABLE table_name(
 CREATE INDEX service_index ON table_name (service);
 ```
 
-### Test Cases
-Write you TestNG test cases in java file with the `@Test` annotation.
-```bash
-@Test(groups = {"group_name"})
-  public void testFunction() throws Exception {
-  /* Example of a Test Case:
-   * TestUtils.exAndValidateAPICall(testdf.getTestData(id));
-   * where id = id of the corresponding test case in postgres table
-   */
-  }
-```
+#### TestNG '.xml' file
+`/suites/file_name.xml` <br />
+Configure the .xml file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
+
+#### Configuring `startup.sh` file
+The shell script `startup.sh` file contains <br />
+`java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config`<br/> where,
+* `target/ClientTest-0.0.1-SNAPSHOT-fat.jar` is the jar created by maven package,<br />
+* `file_name.xml` is the TestNG suite file,<br />
+* `config_name/config_name.config` is the configuration file.
+
+
+#### Configuration file 
+`/config/config_name/config_name.config` <br />
+Configure the .config file (`config_name/config_name.config` in this case) to suit a service. Specify the endpoint of the service and the details of the Postgres Data Base being used to store the test case data.
+
+
+
+
+
