@@ -68,8 +68,6 @@ The shell script `startup.sh` file contains <br />
 * `file_name.xml` is the TestNG suite file,<br />
 * `config_name/config_name.config` is the configuration file.
 
-
-
 ### TestNG '.xml' suites file
 `/suites/file_name.xml` <br />
 Configure the suite file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
