@@ -14,7 +14,8 @@ Github : Git repository hosted server<br/>
 ### Maven Projects
 #### 1. `SfMain` 
 This project contains :
-* The code for all APIs of Waybill Service.<br/>
+* The code for all APIs of Waybill Service.
+* StartVerticle.java is where the execution starts. This will deploy three verticles namely `HttpVerticle`,`LotWaybillVerticle`,`HttpClientVerticle`.
 
 #### 2. `lambdas`
 This project contains
