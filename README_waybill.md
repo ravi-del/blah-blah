@@ -10,12 +10,29 @@ Maven  : Build tool <br/>
 Github : Git repository hosted server<br/>
 
 ## Catalogue
+
 ### Maven Projects
 #### 1. `SfMain` 
 This project comprises of the code of APIs 
+#### 2. `lambdas`
+
+#### 3. `Util` 
+
 ### Database Tables
+#### 1. Lots Table
+#### 2. Prefix Table 
+#### 3. Client Sequence Table
+#### 4. Waybills Table
 
 ### APIs
+#### 1. Create Lot 
+#### 2. Lot by ID
+#### 3. Lots by Client
+#### 4. Create Dynamic Waybill
+#### 5. Consume Waybill
+#### 6. UnConsume Waybill
+#### 7. Waybill by ID
+#### 8. Validate Waybill
 
 ## Execution
 ```bash
@@ -26,9 +43,4 @@ cd ../../SfMain/
 mvn clean package
 chmod +x startup.sh
 ./startup.sh
-```
-1. Clone the git hub repository to local.<br/>
-`git clone https://github.com/delhivery/api-autommation.git`
-```bash
-private TestDataFactory testdf = TestDataFactory.getTestDataFactory();
 ```
