@@ -3,7 +3,7 @@
 This service generates and manages the waybills for Delhivery clients.
 
 ## Tools & Libraries
-The Waybill service is comprised of following tools and libraries: <br />
+The Waybill service is comprised of following tools and libraries: <br/>
 JAVA   : Programming language<br/>
 Vert.x : Web application framework
 Maven  : Build tool <br/>
@@ -14,7 +14,7 @@ Github : Git repository hosted server<br/>
 ### Maven Projects
 #### 1. `SfMain` 
 This project contains :
-* The code for all APIs of Waybill Service.
+* The code for all APIs of Waybill Service.<br/>
 #### 2. `lambdas`
 This project contains
 #### 3. `Util` 
