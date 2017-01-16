@@ -61,10 +61,6 @@ CREATE TABLE table_name(
 CREATE INDEX service_index ON table_name (service);
 ```
 
-#### TestNG '.xml' file
-`/suites/file_name.xml` <br />
-Configure the .xml file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
-
 #### Configuring `startup.sh` file
 The shell script `startup.sh` file contains <br />
 `java -jar target/ClientTest-0.0.1-SNAPSHOT-fat.jar -f=file_name.xml -config=config_name/config_name.config`<br/> where,
@@ -73,11 +69,14 @@ The shell script `startup.sh` file contains <br />
 * `config_name/config_name.config` is the configuration file.
 
 
+
+#### TestNG '.xml' suites file
+`/suites/file_name.xml` <br />
+Configure the suite file (`file_name.xml` in this case) of TestNG by specifying the groups and classes in the suite tag. This will invoke the testing according to the details in file_name.xml file.
+
+
+
+
 #### Configuration file 
 `/config/config_name/config_name.config` <br />
-Configure the .config file (`config_name/config_name.config` in this case) to suit a service. Specify the endpoint of the service and the details of the Postgres Data Base being used to store the test case data.
-
-
-
-
-
+Configure the .config file (`config_name/config_name.config` in this case) to suit a service. Specify the endpoint of the service (The test cases would pick up the endpoint from config file according to the value of key 'service' in the data base) and the details of the Postgres Data Base being used such as Database name, username, password, table name, Database driver name etc.
