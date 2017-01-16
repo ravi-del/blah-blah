@@ -13,9 +13,11 @@ Github : Git repository hosted server<br/>
 
 ### Maven Projects
 #### 1. `SfMain` 
-This project comprises of the code of APIs 
+This project contains :
+* The code for all APIs of Waybill Service.
+* 
 #### 2. `lambdas`
-
+This project contains
 #### 3. `Util` 
 
 ### Database Tables
