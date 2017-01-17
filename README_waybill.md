@@ -19,9 +19,13 @@ Github : Git repository hosted server<br/>
  * `LotWaybillVerticle` - Registers the request handlers to the corresponding classes.
  * `HttpClientVerticle` - This is where waybill service can request external APIs and use the response.
 * `HttpVerticle` also registers the classes which handle request of a particular url, these classes will sends the request to classes registered in `LotWaybillVerticle`.
-* The `conf/` folder contains the configuration pertaining to the environments like _development_, _Quality Assurance_, _production_ which can be selected while execution.
+* The `conf/` directory contains the configuration pertaining to the environments like _development_, _Quality Assurance_, _production_ which can be selected while execution.
+* `Startup.sh` contains the execution script.
 
 #### 2. `lambdas`
+* This project creates waybills for lots whose size is greater than 25. The first 25 waybills are created in `SfMain` and the later are created in `lambdas`.
+* The _Current Status_ of a Lot created with size greater than 25 will be changed from _PENDING_ to _READY_ after all the waybills are created in AWS lambda.
+* The Fat JAR of this project is deployed on AWS lambda which will be trigerred whenever a Waybill Lot is created.
 * 
 
 #### 3. `Util` 
