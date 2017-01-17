@@ -16,8 +16,7 @@ Github : Git repository hosted server<br/>
 This project contains :
 * The code for all APIs of Waybill Service.
 * StartVerticle.java is where the execution starts. This will deploy three Vertx verticles namely `HttpVerticle`,`LotWaybillVerticle`,`HttpClientVerticle`.
-
-** `HttpVerticle` - 
+ * `HttpVerticle` - 
 
 #### 2. `lambdas`
 This project contains
