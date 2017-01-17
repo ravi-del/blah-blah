@@ -39,10 +39,10 @@ Github : Git repository hosted server<br/>
 ### Database Tables
  Amazon DynamoDB is used to store these tables.
 #### 1. Lots Table (_waybill.lot_)
-This table contains the information of Waybill Lots and the 
-#### 2. Prefix Table 
-#### 3. Client Sequence Table
-#### 4. Waybills Table
+This table contains the meta information about a lot.
+#### 2. Prefix Table (_waybill.prefix_)
+#### 3. Client Sequence Table (_waybill.clientSequence_)
+#### 4. Waybills Table (_waybill.waybills_)
 
 #### NOTE:
 Seperate tables are created for each of the environments namely 
@@ -58,9 +58,18 @@ The naming of DynamoDB tables for each of these environments will have the follo
 - - - -
 
 ### APIs
+All api validate the input as a first step and then proceed further
 #### 1. Create Lot 
+This API Creates Waybill Lots.
+The API does the following steps:
+* It gets Client Information and validates it.
+* Then it checks in guava cache if the prefix belongs to the same client. If yes, it will proceed to the next step else, it reserves the prefix in the __Prefix Table__ for that specific client and updates it in the guava cache.
+* It gets the starting sequence for generating waybills from __Client Sequence Table__.
+* If the lot size is greater than 25, only the first 25 lots are created with the lot status as "_PENDING_" and the later are created by `lambdas` project in AWS lambda which will be triggered after adding the lot information in __Lots Table__.
+* After the creation of later sequence waybills in AWS lambda the status of the lot will be updated to "_READY_".
 
 #### 2. Lot by ID
+This API gets the information of a Waybill Lot.
 
 #### 3. Lots by Client
 
