@@ -127,3 +127,5 @@ mvn clean package
 chmod +x startup.sh
 ./startup.sh
 ```
+### `Startup.sh`
+The execution environment can be changed by specifying the path of corresponding environment's configuration file after `-conf` in `Startup.sh` file.
