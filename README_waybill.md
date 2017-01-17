@@ -18,7 +18,8 @@ Github : Git repository hosted server<br/>
  * `HttpVerticle` - Reads the configuration file and starts HTTP server on a port.
  * `LotWaybillVerticle` - Registers the request handlers to the corresponding classes.
  * `HttpClientVerticle` - This is where waybill service can request external APIs and use the response.
-* `HttpVerticle` also registers the classes which handle request of a particular url, which sends the request to classes registered in `LotWaybillVerticle`.
+* `HttpVerticle` also registers the classes which handle request of a particular url, these classes will sends the request to classes registered in `LotWaybillVerticle`.
+* The `conf/` folder contains the configuration pertaining to the environments like _development_, _Quality Assurance_, _production_ which can be selected while execution.
 
 #### 2. `lambdas`
 * 
