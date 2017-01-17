@@ -54,11 +54,11 @@ Seperate tables are created for each of the environments namely
 * Production environment 
 
 The naming of DynamoDB tables for each of these environments will have the following suffixes to the table names mentioned above:
-* No suffix is used for development environment .
+* No suffix is used for development environment.</br>
  eg: _waybill.lot_
-* __-QA__ is used for testing environment.
+* __-QA__ is used for testing environment.</br>
  eg: _waybill.lot-QA_
-* __-prod__ is used for production environment.
+* __-prod__ is used for production environment.</br>
  eg: _waybill.lot-prod_
 
 - - - -
