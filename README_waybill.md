@@ -44,9 +44,10 @@ Github : Git repository hosted server<br/>
 
 #### NOTE:
 Seperate tables are created for each of the environments namely 
-* _dev_ (for development environment.)
-* _QA_ (for testing environment.)
-* _prod_ (for production environment.)
+* Development environment
+* Testing environment
+* Production environment 
+
 The naming of DynamoDB tables for each of these environments will have the following suffixes to the table names mentioned above:
 * No suffix is used for development environment .
 * __-QA__ is used for testing environment.
