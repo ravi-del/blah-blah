@@ -5,7 +5,7 @@ This service generates and manages the waybills for Delhivery clients.
 ## Tools & Libraries
 The Waybill service is comprised of following tools and libraries: <br/>
 JAVA   : Programming language<br/>
-Vert.x : Web application framework
+Vert.x : Web application framework<br/>
 Maven  : Build tool <br/>
 Github : Git repository hosted server<br/>
 
@@ -16,6 +16,7 @@ Github : Git repository hosted server<br/>
 This project contains :
 * The code for all APIs of Waybill Service.
 * StartVerticle.java is where the execution starts. This will deploy three Vertx verticles namely `HttpVerticle`,`LotWaybillVerticle`,`HttpClientVerticle`.
+
 ** `HttpVerticle` - 
 
 #### 2. `lambdas`
