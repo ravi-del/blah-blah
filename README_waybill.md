@@ -64,19 +64,41 @@ This API Creates Waybill Lots.
 The API does the following steps:
 * It gets Client Information and validates it.
 * Then it checks in guava cache if the prefix belongs to the same client. If yes, it will proceed to the next step else, it reserves the prefix in the __Prefix Table__ for that specific client and updates it in the guava cache.
-* It gets the starting sequence for generating waybills from __Client Sequence Table__.
-* If the lot size is greater than 25, only the first 25 lots are created with the lot status as "_PENDING_" and the later are created by `lambdas` project in AWS lambda which will be triggered after adding the lot information in __Lots Table__.
-* After the creation of later sequence waybills in AWS lambda the status of the lot will be updated to "_READY_".
+* It gets and updates the starting sequence for generating waybills from __Client Sequence Table__.
+* It then gets the algorithm of client for waybill generation from guava cache. If not present it fetches it from __Client Sequence Table__ and updates it in the guava cache.
+* If the lot size is greater than 25, only the first 25 lots are created and populated in __Waybills Table__ and then the Lot information is added in __Lots Table__ with lot status as "_PENDING_".
+* The later are created by `lambdas` project in AWS lambda which will be triggered after adding the lot information in __Lots Table__ and after the creation of later sequence waybills the status of the lot will be updated to "_READY_".
 
 #### 2. Lot by ID
-This API gets the information of a Waybill Lot.
+This API gets all the available waybills of a Waybill Lot.</br>
+The API fetches all the available waybills of the Lot from __Waybills Table__ using the Table index created around lot IDs and then sends these waybills in the response.
 
 #### 3. Lots by Client
+This API gets meta information about all the lots of a particluar client.</br>
+The API gets all Lots of a particular client from __Lots Table__ using Table index created around Client IDs and sends these in the response.
 
 #### 4. Create Dynamic Waybill
+This API dynamically creates one waybill for a client.
+The API does the following steps:
+* It checks in guava cache if the prefix belongs to the same client. If yes, it will proceed to the next step else, it reserves the prefix in the __Prefix Table__ for that specific client and updates it in the guava cache.
+* It gets and updates the starting sequence for generating waybills from __Client Sequence Table__.
+* It then gets the algorithm of client for waybill generation from guava cache. If not present it fetches it from __Client Sequence Table__ and updates it in the guava cache.
+* The algorithm is then used to create the waybill number.
+
 #### 5. Consume Waybill
+This API consumes a waybill.
+The API does the following steps:
+* Consumes the waybill by updating the availability status of the waybill in __Waybills Table__ from True to False.
+* It then updates the number of available waybills of the Lot to which this waybill belongs in __Lots Table__.
+
 #### 6. UnConsume Waybill
+This API unconsumes a waybill.
+The API does the following steps:
+* Consumes the waybill by updating the availability status of the waybill in __Waybills Table__ from False to True.
+* It then updates the number of available waybills of the Lot to which this waybill belongs in __Lots Table__.
+
 #### 7. Waybill by ID
+
 #### 8. Validate Waybill
 
 ## Execution
