@@ -41,8 +41,11 @@ Github : Git repository hosted server<br/>
 #### 1. Lots Table (_waybill.lot_)
 This table contains the meta information about a lot.
 #### 2. Prefix Table (_waybill.prefix_)
+This table contains the prefix information of a particular client.
 #### 3. Client Sequence Table (_waybill.clientSequence_)
+This table contains the last sequence used to generate the latest waybill of a particular client.
 #### 4. Waybills Table (_waybill.waybills_)
+This table contains the meta information about a waybill.
 
 #### NOTE:
 Seperate tables are created for each of the environments namely 
@@ -108,7 +111,7 @@ The API does the following steps:
 * It then validates the waybill by checking if the waybill fits the algorithm.
 
 ## Execution
-1. Clone the git hub repository to local.
+1. Clone the git hub repository to local.</br>
 `git clone https://ravi-del@bitbucket.org/DelhiveryTech/waybill_service.git`
 
 2. Build the `lambdas` project to make a library of it in maven repository
