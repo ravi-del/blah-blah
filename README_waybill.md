@@ -58,7 +58,7 @@ The naming of DynamoDB tables for each of these environments will have the follo
 - - - -
 
 ### APIs
-All api validate the input as a first step and then proceed further
+All APIs validate the request as a first step and then proceed further.
 #### 1. Create Lot 
 This API Creates Waybill Lots.
 The API does the following steps:
@@ -66,8 +66,8 @@ The API does the following steps:
 * Then it checks in guava cache if the prefix belongs to the same client. If yes, it will proceed to the next step else, it reserves the prefix in the __Prefix Table__ for that specific client and updates it in the guava cache.
 * It gets and updates the starting sequence for generating waybills from __Client Sequence Table__.
 * It then gets the algorithm of client for waybill generation from guava cache. If not present it fetches it from __Client Sequence Table__ and updates it in the guava cache.
-* If the lot size is greater than 25, only the first 25 lots are created and populated in __Waybills Table__ and then the Lot information is added in __Lots Table__ with lot status as "_PENDING_".
-* The later are created by `lambdas` project in AWS lambda which will be triggered after adding the lot information in __Lots Table__ and after the creation of later sequence waybills the status of the lot will be updated to "_READY_".
+* If the lot size is greater than 25, only the first 25 lots are created and populated in __Waybills Table__ and then the Lot information is added in __Lots Table__ with lot status as _"PENDING"_.
+* The later are created by `lambdas` project in AWS lambda which will be triggered after adding the lot information in __Lots Table__ and after the creation of later sequence waybills the status of the lot will be updated to _"READY"_.
 
 #### 2. Lot by ID
 This API gets all the available waybills of a Waybill Lot.</br>
@@ -82,7 +82,7 @@ This API dynamically creates one waybill for a client.
 The API does the following steps:
 * It checks in guava cache if the prefix belongs to the same client. If yes, it will proceed to the next step else, it reserves the prefix in the __Prefix Table__ for that specific client and updates it in the guava cache.
 * It gets and updates the starting sequence for generating waybills from __Client Sequence Table__.
-* It then gets the algorithm of client for waybill generation from guava cache. If not present it fetches it from __Client Sequence Table__ and updates it in the guava cache.
+* It then gets the algorithm of client for waybill generation from guava cache. If not present it fetches algorithm from __Client Sequence Table__ and updates it in the guava cache. If not present in __Client Sequence Table__ the algorithm is chosen as _"DEFAULT"_.
 * The algorithm is then used to create the waybill number.
 
 #### 5. Consume Waybill
@@ -98,14 +98,27 @@ The API does the following steps:
 * It then updates the number of available waybills of the Lot to which this waybill belongs in __Lots Table__.
 
 #### 7. Waybill by ID
+This API gets the meta information about a waybill.
+The API gets the information of the waybill from __Waybills Table__ and sends the required information in the response.
 
 #### 8. Validate Waybill
+This API validates a waybill.
+The API does the following steps:
+* It gets the algorithm of client for waybill generation from guava cache. If not present it fetches algorithm from __Client Sequence Table__ and updates it in the guava cache. If not present in __Client Sequence Table__ the algorithm is chosen as _"DEFAULT"_.
+* It then validates the waybill by checking if the waybill fits the algorithm.
 
 ## Execution
+1. Clone the git hub repository to local.
+`git clone https://ravi-del@bitbucket.org/DelhiveryTech/waybill_service.git`
+
+2. Build the `lambdas` project to make a library of it in maven repository
 ```bash
-git clone https://ravi-del@bitbucket.org/DelhiveryTech/waybill_service.git
 cd Util/utils
 mvn clean install
+```
+
+3. Create a Fat JAR of SfMain and execute it using the shell script
+```
 cd ../../SfMain/
 mvn clean package
 chmod +x startup.sh
