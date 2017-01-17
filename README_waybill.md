@@ -15,7 +15,8 @@ Github : Git repository hosted server<br/>
 #### 1. `SfMain` 
 This project contains :
 * The code for all APIs of Waybill Service.
-* StartVerticle.java is where the execution starts. This will deploy three verticles namely `HttpVerticle`,`LotWaybillVerticle`,`HttpClientVerticle`.
+* StartVerticle.java is where the execution starts. This will deploy three Vertx verticles namely `HttpVerticle`,`LotWaybillVerticle`,`HttpClientVerticle`.
+** `HttpVerticle` - 
 
 #### 2. `lambdas`
 This project contains
