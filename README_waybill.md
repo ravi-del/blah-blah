@@ -38,8 +38,7 @@ Github : Git repository hosted server<br/>
 
 ### Database Tables
  Amazon DynamoDB is used to store these tables.
-#### 1. Lots Table (***waybill.lot***)
-
+#### 1. Lots Table (_waybill.lot_)
 This table contains the information of Waybill Lots and the 
 #### 2. Prefix Table 
 #### 3. Client Sequence Table
@@ -60,8 +59,11 @@ The naming of DynamoDB tables for each of these environments will have the follo
 
 ### APIs
 #### 1. Create Lot 
+
 #### 2. Lot by ID
+
 #### 3. Lots by Client
+
 #### 4. Create Dynamic Waybill
 #### 5. Consume Waybill
 #### 6. UnConsume Waybill
